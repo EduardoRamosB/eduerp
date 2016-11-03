@@ -17,10 +17,22 @@ public class UserController {
 	
 	@Autowired UserService us;
 	
+	@RequestMapping(value = "login", method = RequestMethod.POST)
+	public String login(@ModelAttribute("user")User user, HttpServletRequest req, RedirectAttributes ra){
+		String path = "";
+		
+		if(us.login(user, req)){
+			path = "dashboard";
+		}else{
+			ra.addFlashAttribute("msg", "Email o Password incorrectos.");
+			path = "redirect:/";
+		}
+		
+		return path;
+	}
+	
 	@RequestMapping(value = "signup", method = RequestMethod.POST)
 	public String signup(@ModelAttribute("user")User user, HttpServletRequest req, RedirectAttributes ra){
-		//String path = "index";
-		
 		if(us.signUp(user, req)){
 			ra.addFlashAttribute("msg", "User created, please login.");
 			System.out.println("RedirectAttributes: " + ra.getFlashAttributes());

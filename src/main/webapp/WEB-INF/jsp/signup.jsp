@@ -1,22 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
 <title>ERP | Sign up</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="width=device-width, initial-scale=1" name="viewport" />
-<meta content="Simularte ERP" name="description" />
-<meta content="Simularte" name="author" />
-<!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-<link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
-<!-- END GLOBAL MANDATORY STYLES -->
-
+<jsp:include page="comps/headMandatory.jsp"/>
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <link href="assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -33,7 +21,6 @@
 
 <!-- BEGIN THEME LAYOUT STYLES -->
 <!-- END THEME LAYOUT STYLES -->
-
 <link rel="shortcut icon" href="favicon.ico" /> </head>
 </head>
 
@@ -48,21 +35,27 @@
   <div class="content">
 	  <!-- BEGIN REGISTRATION FORM -->
 	  <form:form id="frmRegister" class="my-register-form" action="signup" modelAttribute="user" method="post">
-	  	<h3 class="font-green">Sign Up</h3>
-	    <p class="hint"> Enter your account details below: </p>
+	  	<h3 class="font-green" style="margin-bottom: 25px;">Sign Up</h3>
 	    <div class="form-group">
 	      <label class="control-label visible-ie8 visible-ie9">Email</label>
-	      <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email" /> </div>
+	      <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email" />
+	    </div>
 	    <div class="form-group">
-	        <label class="control-label visible-ie8 visible-ie9">Password</label>
-	        <input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="Password" name="password" /> </div>
+	      <label class="control-label visible-ie8 visible-ie9">Password</label>
+	      <input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="Password" name="password" />
+	    </div>
 	    <div class="form-group">
-	        <label class="control-label visible-ie8 visible-ie9">Re-type Your Password</label>
-	        <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Re-type Your Password" name="rpassword" /> </div>
-	    <div class="form-group">
-	    	<button type="submit" id="register-submit-btn" class="btn green pull-right"> Sign Up </button>                 
-        <div id="register_tnc_error"> </div>
-      </div>
+	      <label class="control-label visible-ie8 visible-ie9">Re-type Your Password</label>
+	      <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Re-type Your Password" name="rpassword" />
+	    </div>
+	    
+	    <div class="form-actions" style="border-bottom: 0px;">
+	    	<div class="form-group">
+	    	<button type="submit" id="register-submit-btn" class="btn green pull-right"> Sign Up </button>
+	    	</div>
+	    </div>
+	    
+	    
 	  </form:form>
 	  <!-- END REGISTRATION FORM -->
   </div>
@@ -95,11 +88,57 @@
 <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
 <!-- END THEME GLOBAL SCRIPTS -->
 
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-<!-- <script src="assets/pages/scripts/login.min.js" type="text/javascript"></script> -->
-<!-- END PAGE LEVEL SCRIPTS -->
-
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
 <!-- END THEME LAYOUT SCRIPTS -->
+<script>
+$(document).ready(function() { 
+	$('#frmRegister').validate({
+		errorElement: 'span', //default input error message container
+	  errorClass: 'help-block', // default input error message class
+	  focusInvalid: false, // do not focus the last invalid input
+	  ignore: "",
+	  rules: {
+	    email: {
+	        required: true,
+	        email: true
+	    },
+	    password: {
+	        required: true
+	    },
+	    rpassword: {
+	        equalTo: "#register_password"
+	    }
+	  },
+	
+	  invalidHandler: function(event, validator) { //display error alert on form submit   
+	
+	  },
+	
+	  highlight: function(element) { // hightlight error inputs
+	  	$(element).closest('.form-group').addClass('has-error'); // set error class to the control group
+	  },
+	
+	  success: function(label) {
+	  	label.closest('.form-group').removeClass('has-error');
+	    label.remove();
+	  },
+	
+	  errorPlacement: function(error, element) {
+	    if (element.attr("name") == "tnc") { // insert checkbox errors after the container                  
+	        error.insertAfter($('#register_tnc_error'));
+	    } else if (element.closest('.input-icon').size() === 1) {
+	        error.insertAfter(element.closest('.input-icon'));
+	    } else {
+	        error.insertAfter(element);
+	    }
+	  },
+	
+	  submitHandler: function(form) {
+	  	form.submit();
+	  }
+    
+	});
+})
+</script>
 </body>
 </html>

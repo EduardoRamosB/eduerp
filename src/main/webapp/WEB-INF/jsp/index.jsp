@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,56 +46,39 @@
 	<!-- BEGIN LOGIN -->
   <div class="content">
       <!-- BEGIN LOGIN FORM -->
-      <form class="login-form" action="index.html" method="post">
-          <h3 class="form-title font-green">Sign In</h3>
-          <div class="alert alert-danger display-hide">
-              <button class="close" data-close="alert"></button>
-              <span> Enter any username and password. </span>
-          </div>
-          <div class="form-group">
-              <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-              <label class="control-label visible-ie8 visible-ie9">Username</label>
-              <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" /> </div>
-          <div class="form-group">
-              <label class="control-label visible-ie8 visible-ie9">Password</label>
-              <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" /> </div>
-          <div class="form-actions">
-              <button type="submit" class="btn green uppercase">Login</button>
-              <label class="rememberme check mt-checkbox mt-checkbox-outline">
-                  <input type="checkbox" name="remember" value="1" />Remember
-                  <span></span>
-              </label>
-              <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
-          </div>
-          <div class="login-options">
-          	<h1>${msg}</h1>
-              <h4>Or login with</h4>
-              <ul class="social-icons">
-                  <li>
-                      <a class="social-icon-color facebook" data-original-title="facebook" href="javascript:;"></a>
-                  </li>
-                  <li>
-                      <a class="social-icon-color twitter" data-original-title="Twitter" href="javascript:;"></a>
-                  </li>
-                  <li>
-                      <a class="social-icon-color googleplus" data-original-title="Goole Plus" href="javascript:;"></a>
-                  </li>
-                  <li>
-                      <a class="social-icon-color linkedin" data-original-title="Linkedin" href="javascript:;"></a>
-                  </li>
-              </ul>
-          </div>
-          <div class="create-account">
-              <p>
-                  <a href="javascript:;" id="register-btn" class="uppercase">Create an account</a>
-              </p>
-          </div>
-      </form>
+      <form:form id="frmLogin" class="login-form" action="login" modelAttribute="user" method="post">
+      	<h3 class="form-title font-green">Login</h3>
+      	<div class="alert alert-danger display-hide">
+	        <button class="close" data-close="alert"></button>
+	        <span> Ingrese email y password. </span>
+        </div>
+        
+        <div class="form-group">
+	      	<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+	        <label class="control-label visible-ie8 visible-ie9">Email</label>
+	        <div class="input-icon">
+	        	<i class="fa fa-envelope"></i>
+	        	<input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email" autofocus/>
+	        </div>
+	      </div>
+          
+	      <div class="form-group">
+	      	<label class="control-label visible-ie8 visible-ie9">Password</label>
+	       	<div class="input-icon">
+	       		<i class="fa fa-lock"></i>
+	       		<input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" />
+	       	</div>
+	    	</div>
+	    	
+	    	<div class="form-actions">
+        	<button type="submit" class="btn green uppercase">Login</button>
+      	</div>
+      	
+      	<p style="color: #e73d4a">${msg}</p>
+      </form:form>
       <!-- END LOGIN FORM -->
-      
   </div>
   <!-- END LOGIN -->
-  
   <div class="copyright"> 2016 © Simularte.</div>
   
 <!--[if lt IE 9]>
@@ -123,11 +106,63 @@
 <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
 <!-- END THEME GLOBAL SCRIPTS -->
 
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="assets/pages/scripts/login.min.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
-
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
 <!-- END THEME LAYOUT SCRIPTS -->
+<script>
+$(document).ready(function() {
+	$('.login-form').validate({
+  	errorElement: 'span', //default input error message container
+    errorClass: 'help-block', // default input error message class
+    focusInvalid: false, // do not focus the last invalid input
+    rules: {
+        email: {
+            required: true
+        },
+        password: {
+            required: true
+        }
+    },
+
+      messages: {
+          email: {
+              required: "Email es requerido."
+          },
+          password: {
+              required: "Password es requerido."
+          }
+      },
+
+      invalidHandler: function(event, validator) { //display error alert on form submit   
+          $('.alert-danger', $('.login-form')).show();
+      },
+
+      highlight: function(element) { // hightlight error inputs
+          $(element).closest('.form-group').addClass('has-error'); // set error class to the control group
+      },
+
+      success: function(label) {
+          label.closest('.form-group').removeClass('has-error');
+          label.remove();
+      },
+
+      errorPlacement: function(error, element) {
+          error.insertAfter(element.closest('.input-icon'));
+      },
+
+      submitHandler: function(form) {
+          form.submit(); // form validation success, call ajax form submit
+      }
+  });
+	
+	$('.login-form input').keypress(function(e) {
+	  if (e.which == 13) {
+	    if ($('.login-form').validate().form()) {
+	        $('.login-form').submit(); //form validation success, call ajax form submit
+	    }
+	    return false;
+	  }
+  });
+});
+</script>
 </body>
 </html>
