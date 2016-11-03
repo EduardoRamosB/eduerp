@@ -42,6 +42,18 @@ public class UserController {
 		
 		return "redirect:/";
 	}
+	
+	@RequestMapping("logout")
+	public String logout(HttpServletRequest req, RedirectAttributes ra){
+		String path = "";
+		
+		if(us.logout(req)){
+			ra.addFlashAttribute("msg", "Sesion terminada.");
+			path = "redirect:/";
+		}
+		
+		return path;
+	}
 
 	@RequestMapping("lalo_signup")
 	public String signup(){
