@@ -23,6 +23,8 @@ public class Company {
 	//Fields
 	@Column(length = 30)
 	private String taxCode;
+	@Column(length = 30)
+	private String type;
 	@Column(length = 190)
 	private String name;
 	@Column(length = 190)
@@ -53,7 +55,6 @@ public class Company {
 	
 	
 	
-	
 	public Long getIdCompany() {
 		return idCompany;
 	}
@@ -71,6 +72,12 @@ public class Company {
 	}
 	public void setTaxCode(String taxCode) {
 		this.taxCode = taxCode;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	public String getName() {
 		return name;

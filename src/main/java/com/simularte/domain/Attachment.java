@@ -15,9 +15,9 @@ public class Attachment {
 	private Long idAttachment;
 	
 	//Non-Identifying Relationships
-	@Column(name = "identity", nullable = false)
+	@Column(nullable = false)
 	private Integer idEntity;
-	@Column(name = "typeentity", length = 60, nullable = false)	
+	@Column(length = 60, nullable = false)	
 	private String typeEntity;
 	
 	//Fields
