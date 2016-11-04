@@ -390,7 +390,7 @@
 	                                        <img class="media-object" src="assets/layouts/layout/img/avatar9.jpg" alt="...">
 	                                        <div class="media-body">
 	                                            <h4 class="media-heading">Deon Portalatin</h4>
-	                                            <div class="media-heading-sub"> CFO, H&D LTD </div>
+	                                            <div class="media-heading-sub"> CFO, H&amp;D LTD </div>
 	                                        </div>
 	                                    </li>
 	                                    <li class="media">

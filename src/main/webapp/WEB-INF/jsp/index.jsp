@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>ERP | Login</title>
+<title>Login | ERP</title>
 <jsp:include page="comps/headMandatory.jsp"/>
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <link href="assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
