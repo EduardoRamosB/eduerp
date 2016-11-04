@@ -17,6 +17,19 @@
 <link href="assets/layouts/layout3/css/custom.min.css" rel="stylesheet" type="text/css" />
 <!-- END THEME LAYOUT STYLES -->
 <link rel="shortcut icon" href="favicon.ico" />
+<style>
+.page-header .page-header-menu .hor-menu .navbar-nav > li.active > a, .page-header .page-header-menu .hor-menu .navbar-nav > li.active > a:hover, .page-header .page-header-menu .hor-menu .navbar-nav > li.current > a, .page-header .page-header-menu .hor-menu .navbar-nav > li.current > a:hover {
+	color: #fff;
+	background: #875a7b;
+}
+.page-header .page-header-menu .hor-menu .navbar-nav > li .dropdown-menu {
+	background: #55616f;
+}
+.page-header .page-header-menu .hor-menu .navbar-nav > li > a, .page-header .page-header-menu .hor-menu .navbar-nav > li > a > i {
+	color: #fff;
+	padding: 13px 18px 13px;
+}
+</style>
 </head>
 <!-- END HEAD -->
 
@@ -25,32 +38,34 @@
 	<div class="page-wrapper-row">
 	  <div class="page-wrapper-top">
 	    <!-- BEGIN HEADER -->
-	    <div class="page-header">
+	    <div class="page-header" style="height: 46px;">
 	      
 	      <!-- BEGIN HEADER TOP -->
 	      <div class="page-header-top" style="background-color: #875a7b;height: 46px;">
 	        <div class="container-fluid">
+	          
 	          <!-- BEGIN LOGO -->
-	          <div class="page-logo">
+	          <div class="page-logo" style="height: 46px;width: 50%;">
 	          	<!-- <a href="index.html"><img src="assets/layouts/layout3/img/logo-default.jpg" alt="logo" class="logo-default"></a> -->
 	          	
-	          	<div class="page-header-menu">
+	          	<div class="page-header-menu" style="height: 46px;background: #875a7b;">
 				        <div class="container-fluid">  
 				          <!-- BEGIN MEGA MENU -->
 				          <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
 				          <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
 				          <div class="hor-menu  ">
 				            <ul class="nav navbar-nav">
-				              <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown active">
-				                <a href="javascript:;"> Layouts <span class="arrow"></span></a>
+				            	<li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown active">
+				                <a href="javascript:;"> Tablero <span class="arrow"></span></a>
+				              </li>
+				              
+				              <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown">
+				                <a href="javascript:;"> Ventas <span class="arrow"></span></a>
 				                <ul class="dropdown-menu pull-left">
-				                  <li aria-haspopup="true" class=" "><a href="layout_mega_menu_light.html" class="nav-link  "> Light Mega Menu </a></li>
-				                  <li aria-haspopup="true" class=" "><a href="layout_top_bar_light.html" class="nav-link  "> Light Top Bar Dropdowns </a></li>
-				                  <li aria-haspopup="true" class=" active"><a href="layout_fluid_page.html" class="nav-link  active"> Fluid Page </a></li>
-				                  <li aria-haspopup="true" class=" "><a href="layout_top_bar_fixed.html" class="nav-link  "> Fixed Top Bar </a></li>
-				                  <li aria-haspopup="true" class=" "><a href="layout_mega_menu_fixed.html" class="nav-link  "> Fixed Mega Menu </a></li>
-				                  <li aria-haspopup="true" class=" "><a href="layout_disabled_menu.html" class="nav-link  "> Disabled Menu Links </a></li>
-				                  <li aria-haspopup="true" class=" "><a href="layout_blank_page.html" class="nav-link  "> Blank Page </a></li>
+				                  <li aria-haspopup="true" class=" "><a href="#" class="nav-link  "> Clientes </a></li>
+				                  <li aria-haspopup="true" class=" "><a href="#" class="nav-link  "> Internas </a></li>
+				                  <li aria-haspopup="true" class=" "><a href="#" class="nav-link  "> Fluid Page </a></li>
+				                  <li aria-haspopup="true" class=" "><a href="#" class="nav-link  "> Fixed Top Bar </a></li>
 				                </ul>
 				              </li>
 				              </ul>
@@ -60,6 +75,8 @@
 				    	</div>
 	          </div>
 	          <!-- END LOGO -->
+	          
+	          <a href="javascript:;" class="menu-toggler" style="margin: 10px 3px 0 13px;"></a>
 	          
 	          <!-- BEGIN TOP NAVIGATION MENU -->
 	          <div class="top-menu" style="margin: 0px;">
@@ -87,45 +104,7 @@
 	      
 	      
 	      
-	      <!-- BEGIN HEADER MENU -->
-	      <div class="page-header-menu">
-	        <div class="container-fluid">
-	          <!-- BEGIN HEADER SEARCH BOX -->
-	          <form class="search-form" action="page_general_search.html" method="GET">
-	              <div class="input-group">
-	                  <input type="text" class="form-control" placeholder="Search" name="query">
-	                  <span class="input-group-btn">
-	                      <a href="javascript:;" class="btn submit">
-	                          <i class="icon-magnifier"></i>
-	                      </a>
-	                  </span>
-	              </div>
-	          </form>
-	          <!-- END HEADER SEARCH BOX -->
-	          
-	          <!-- BEGIN MEGA MENU -->
-	          <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
-	          <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
-	          <div class="hor-menu  ">
-	            <ul class="nav navbar-nav">
-	              <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown active">
-	                <a href="javascript:;"> Layouts <span class="arrow"></span></a>
-	                <ul class="dropdown-menu pull-left">
-	                  <li aria-haspopup="true" class=" "><a href="layout_mega_menu_light.html" class="nav-link  "> Light Mega Menu </a></li>
-	                  <li aria-haspopup="true" class=" "><a href="layout_top_bar_light.html" class="nav-link  "> Light Top Bar Dropdowns </a></li>
-	                  <li aria-haspopup="true" class=" active"><a href="layout_fluid_page.html" class="nav-link  active"> Fluid Page </a></li>
-	                  <li aria-haspopup="true" class=" "><a href="layout_top_bar_fixed.html" class="nav-link  "> Fixed Top Bar </a></li>
-	                  <li aria-haspopup="true" class=" "><a href="layout_mega_menu_fixed.html" class="nav-link  "> Fixed Mega Menu </a></li>
-	                  <li aria-haspopup="true" class=" "><a href="layout_disabled_menu.html" class="nav-link  "> Disabled Menu Links </a></li>
-	                  <li aria-haspopup="true" class=" "><a href="layout_blank_page.html" class="nav-link  "> Blank Page </a></li>
-	                </ul>
-	              </li>
-	              </ul>
-	        	</div>
-	          <!-- END MEGA MENU -->
-	        </div>
-	    	</div>
-	      <!-- END HEADER MENU -->
+	      
 	    </div>
 	    <!-- END HEADER -->
 	  </div>
