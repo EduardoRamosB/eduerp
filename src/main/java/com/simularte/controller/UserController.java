@@ -17,6 +17,11 @@ public class UserController {
 	
 	@Autowired UserService us;
 	
+	@RequestMapping("accounting")
+	public String conta(){
+		return "accounting";
+	}
+	
 	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public String login(@ModelAttribute("user")User user, HttpServletRequest req, RedirectAttributes ra){
 		String path = "";
