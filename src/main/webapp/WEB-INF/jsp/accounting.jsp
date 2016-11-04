@@ -59,11 +59,12 @@
 	    <!-- BEGIN HEADER -->
 	    <div class="page-header" style="height: 46px;">
 	    	
-    		<!-- MENU USER SHORTCUTS-->
+    		
    			<div class="o_main_navbar">
-   				<!-- SYSTEM OPTIONS -->
+   					<!-- BUTTON TOGGLE MOBILE -->
    					<button id="btnMenuToggler" class="fa fa-bars pull-right visible-xs-block menu-toggler" type="button"></button>
-					    				
+					  
+					  <!-- MENU USER SHORTCUTS-->  				
 				    <ul class="o_menu_systray">
 					    <li class="o_planner_systray hidden-xs">
 					        <div class="progress" data-original-title="" title=""><div class="progress-bar"></div></div>
@@ -125,11 +126,11 @@
 	    			
 	    		
 	    	
-	    	<!-- MENU USER GENERAL-->
+	    	
 	    	<div class="page-header-menu">
 	    		<div class="o_main_navbar">
 	    			
-					    			
+					  <!-- MENU USER GENERAL-->  			
 						<ul class="o_menu_sections" style="">
 							<li>
 						    <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="207" data-action-model="ir.actions.act_window" data-menu="128" href="#menu_id=128&amp;action=207">
@@ -201,7 +202,7 @@
 	    
 	    
 	    
-	    
+<!-- 	    
 <nav>
 	<div class="o_main_navbar">
 		<a class="fa o_menu_toggle fa-th" href="#" style="" accesskey="h"></a>
@@ -338,7 +339,7 @@
 
 	</div>
 </nav>
-     
+  -->    
 	      
 	      
 	      
