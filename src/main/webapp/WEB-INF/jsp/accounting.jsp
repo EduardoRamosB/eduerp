@@ -46,6 +46,31 @@
 	-webkit-background-size: cover;
 	 font-size: 14px; 
 }
+
+/*TOP MENU*/
+.navbar-default {
+	background-color: #875A7B;
+	border: 1px solid #68465f;
+	
+}
+/*LI*/
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-text {
+	color: #fff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+	color: yellow;
+	background-color: #e7e7e7;
+}
+.navbar-default .navbar-nav > li:hover {
+	background-color: #68465f;
+}
+.navbar-default .navbar-nav > li > a:hover {
+	color: #fff;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+	background-color: #68465f;
+	color: #fff;
+}
 </style>
 <link rel="shortcut icon" href="favicon.ico" />
 </head>
@@ -55,294 +80,71 @@
 <div class="page-wrapper">
 	<div class="page-wrapper-row">
 	  <div class="page-wrapper-top">
-	    
+
 	    <!-- BEGIN HEADER -->
 	    <div class="page-header" style="height: 46px;">
 	    	
-    		
-   			<div class="o_main_navbar">
-   					<!-- BUTTON TOGGLE MOBILE -->
-   					<button id="btnMenuToggler" class="fa fa-bars pull-right visible-xs-block menu-toggler" type="button"></button>
-					  
-					  <!-- MENU USER SHORTCUTS-->  				
-				    <ul class="o_menu_systray">
-					    <li class="o_planner_systray hidden-xs">
-					        <div class="progress" data-original-title="" title=""><div class="progress-bar"></div></div>
-					    </li>
-					    <li class="o_mail_navbar_item o_no_notification">
-					        <a href="#" title="Bandeja de entrada">
-					            <i class="fa fa-at"></i> <span class="o_notification_counter">0</span>
-					        </a>
-					    </li>
-					    <li class="o_mail_navbar_item o_no_notification">
-					      <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" title="Conversaciones">
-					      	<i class="fa fa-comments"></i> <span class="o_notification_counter">0</span>
-					      </a>
-					      <ul class="o_mail_navbar_dropdown dropdown-menu" role="menu">
-					        <li class="o_mail_navbar_dropdown_top">
-					          <div>
-					            <button class="btn btn-sm o_filter_button o_selected" type="button"> Todos </button>
-					            <button class="btn btn-sm o_filter_button" data-filter="chat" type="button"> Charla </button>
-					            <button class="btn btn-sm o_filter_button" data-filter="channels" type="button"> Canales </button>
-					          </div>
-					          <button class="btn btn-sm o_new_message" type="button"> Nuevo mensaje </button>
-					        </li>
-					        <li class="o_mail_navbar_dropdown_channels"></li>
-					      </ul>
-					    </li>
-					    <li>
-								<a aria-expanded="false" class="dropdown-toggle o_install_web_studio" data-toggle="dropdown" href="#" title="Customization">
-								  <img alt="" src="//edcorp1.odoo.com/web_studio/static/src/img/studio_icon_small.png" style="margin-bottom:4px">
-								</a>
-								<ul class="dropdown-menu" role="menu" style="width:250px">
-								  <li>
-								    <div style="color:#666; margin:5px;">
-								      <p>Odoo Studio is not installed yet.</p>
-								      <a class="btn btn-sm btn-primary btn-block open_install_web_studio" href="javascript:" style="margin: 5px 0">Install Odoo Studio</a>
-								      <p>Odoo Studio lets you customize screens and menus in a simple and graphical way.</p>
-								    </div>
-								  </li>
-								</ul>
-							</li>
-							<li class="o_user_menu">
-						    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">
-						        <img class="img-circle oe_topbar_avatar" src="https://edcorp1.odoo.com/web/image?model=res.users&amp;field=image_small&amp;id=1">
-						        <span class="oe_topbar_name">Eduardo Ramos</span> <span class="caret"></span>
-						    </a>
-						    <ul class="dropdown-menu" role="menu">
-						      <li><a data-menu="documentation" href="#">Documentacion</a></li>
-						      <li><a data-menu="support" href="#">Soporte</a></li>
-						      <li class="hidden-xs"><a data-menu="shortcuts" href="#">Shortcuts</a></li>
-									<li class="divider"></li>
-						      <li><a data-menu="settings" href="#">Preferencias</a></li>
-						      <li><a data-menu="account" href="#">Mi cuenta Odoo.com</a></li>
-						      <li><a data-menu="logout" href="#">Cerrar sesion</a></li>
-						      <li><a class="hidden" data-menu="switch_account" href="#"> Cambiar/Anadir Cuenta</a></li>
-						    </ul>
-							</li>
-						</ul>
-					    				
-   			</div>
-	    			
-	    		
-	    	
-	    	
-	    	<div class="page-header-menu">
-	    		<div class="o_main_navbar">
-	    			
-					  <!-- MENU USER GENERAL-->  			
-						<ul class="o_menu_sections" style="">
-							<li>
-						    <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="207" data-action-model="ir.actions.act_window" data-menu="128" href="#menu_id=128&amp;action=207">
-						        <span>Tablero</span>
-						    </a>
-					    </li>
-					    
-					    <li>
-						    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
-						        Ventas
-						    </a>
-						    <ul class="dropdown-menu" role="menu">
-							    <li>
-							        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="196" data-action-model="ir.actions.act_window" data-menu="118" href="#menu_id=118&amp;action=196">
-							            <span>Facturas de cliente</span>
-							        </a>
-							    </li>
-							    <li>
-							        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="122" data-action-model="ir.actions.act_window" data-menu="101" href="#menu_id=101&amp;action=122">
-							            <span>Pagos</span>
-							        </a>
-							    </li>
-							    <li>
-							        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="242" data-action-model="ir.actions.client" data-menu="144" href="#menu_id=144&amp;action=242">
-							            <span>Extractos de los clientes</span>
-							        </a>
-							    </li>
-							    <li>
-							        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="56" data-action-model="ir.actions.act_window" data-menu="112" href="#menu_id=112&amp;action=56">
-							            <span>Clientes</span>
-							        </a>
-							    </li>
-							    <li>
-							        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="117" data-action-model="ir.actions.act_window" data-menu="113" href="#menu_id=113&amp;action=117">
-							            <span>Sellable Products</span>
-							        </a>
-							    </li>
-								</ul>
-					    </li>
-					    
-					    <li>
-						    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
-						        Compras
-						    </a>
-						    <ul class="dropdown-menu" role="menu">
-							    <li>
-							        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="197" data-action-model="ir.actions.act_window" data-menu="119" href="#menu_id=119&amp;action=197">
-							            <span>Facturas de proveedor</span>
-							        </a>
-							    </li>
-							    <li>
-							        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="123" data-action-model="ir.actions.act_window" data-menu="102" href="#menu_id=102&amp;action=123">
-							            <span>Pagos</span>
-							        </a>
-							    </li>
-							    <li>
-							        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="57" data-action-model="ir.actions.act_window" data-menu="114" href="#menu_id=114&amp;action=57">
-							            <span>Proveedores</span>
-							        </a>
-							    </li>    
-					       </ul>
-					    </li>
-				    </ul>
-						
-	    			
-	    		</div>
-	    	</div>
+    	
+			  <!-- DEFAULT NAVBAR TOP FIXED -->
+			  <nav class="navbar navbar-default navbar-fixed-top">
+		      <div class="container">
+		        <!-- LEFT -->
+		        <div class="navbar-header">
+		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
+		          <a class="navbar-brand" href="#" style="color: #fff;font-weight: 600;font-size: 22px;">Contabilidad</a>
+		        </div>
+		        
+		        <!-- BEGIN COLLAPSE -->
+		        <div id="navbar" class="navbar-collapse collapse">
+		        
+		          <ul class="nav navbar-nav">
+		            <li><a href="#">Home</a></li>
+		            <li><a href="#about">About</a></li>
+		            <li><a href="#contact">Contact</a></li>
+		            <li class="dropdown">
+		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+		              <ul class="dropdown-menu">
+		                <li><a href="#">Action</a></li>
+		                <li><a href="#">Another action</a></li>
+		                <li><a href="#">Something else here</a></li>
+		                <li role="separator" class="divider"></li>
+		                <li class="dropdown-header">Nav header</li>
+		                <li><a href="#">Separated link</a></li>
+		                <li><a href="#">One more separated link</a></li>
+		              </ul>
+		            </li>
+		          </ul>
+		          
+		          
+		          <ul class="nav navbar-nav navbar-right">
+		            <li class="o_mail_navbar_item o_no_notification"><a href="#" title="Bandeja de entrada"><i class="fa fa-at"></i> <span class="o_notification_counter">0</span></a></li>
+									<li class="o_user_menu">
+								    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">
+								        <img class="img-circle oe_topbar_avatar" src="//edcorp1.odoo.com/web/image?model=res.users&amp;field=image_small&amp;id=1" style="height: 15px;">
+								        <span class="oe_topbar_name">Eduardo Ramos</span> <span class="caret"></span>
+								    </a>
+								    <ul class="dropdown-menu o_menu_systray" role="menu">
+								      <li><a data-menu="documentation" href="#">Documentacion</a></li>
+								      <li><a data-menu="support" href="#">Soporte</a></li>
+								      <li class="hidden-xs"><a data-menu="shortcuts" href="#">Shortcuts</a></li>
+											<li class="divider"></li>
+								      <li><a data-menu="settings" href="#">Preferencias</a></li>
+								      <li><a data-menu="logout" href="#">Cerrar sesion</a></li>
+								    </ul>
+									</li>
+		          </ul>
+		        </div>
+		        <!-- END COLLAPSE -->
+		        
+		      </div>
+		    </nav>
+			    
 	    
-	    
-	    
-	    
-<!-- 	    
-<nav>
-	<div class="o_main_navbar">
-		<a class="fa o_menu_toggle fa-th" href="#" style="" accesskey="h"></a>
-		<button id="btnMenuToggler" class="fa fa-bars pull-right visible-xs-block menu-toggler" type="button"></button>
-		
-		
-		<div class="o_menu_brand" style="">Contabilidad</div>
-		
-		<ul class="o_menu_sections" style="">
-			<li>
-		    <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="207" data-action-model="ir.actions.act_window" data-menu="128" href="#menu_id=128&amp;action=207">
-		        <span>Tablero</span>
-		    </a>
-	    </li>
-	    
-	    <li>
-		    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
-		        Ventas
-		    </a>
-		    <ul class="dropdown-menu" role="menu">
-			    <li>
-			        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="196" data-action-model="ir.actions.act_window" data-menu="118" href="#menu_id=118&amp;action=196">
-			            <span>Facturas de cliente</span>
-			        </a>
-			    </li>
-			    <li>
-			        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="122" data-action-model="ir.actions.act_window" data-menu="101" href="#menu_id=101&amp;action=122">
-			            <span>Pagos</span>
-			        </a>
-			    </li>
-			    <li>
-			        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="242" data-action-model="ir.actions.client" data-menu="144" href="#menu_id=144&amp;action=242">
-			            <span>Extractos de los clientes</span>
-			        </a>
-			    </li>
-			    <li>
-			        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="56" data-action-model="ir.actions.act_window" data-menu="112" href="#menu_id=112&amp;action=56">
-			            <span>Clientes</span>
-			        </a>
-			    </li>
-			    <li>
-			        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="117" data-action-model="ir.actions.act_window" data-menu="113" href="#menu_id=113&amp;action=117">
-			            <span>Sellable Products</span>
-			        </a>
-			    </li>
-				</ul>
-	    </li>
-	    
-	    <li>
-		    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
-		        Compras
-		    </a>
-		    <ul class="dropdown-menu" role="menu">
-			    <li>
-			        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="197" data-action-model="ir.actions.act_window" data-menu="119" href="#menu_id=119&amp;action=197">
-			            <span>Facturas de proveedor</span>
-			        </a>
-			    </li>
-			    <li>
-			        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="123" data-action-model="ir.actions.act_window" data-menu="102" href="#menu_id=102&amp;action=123">
-			            <span>Pagos</span>
-			        </a>
-			    </li>
-			    <li>
-			        <a data-target="#o_navbar_collapse.in" data-toggle="collapse" class="o_menu_entry_lvl_2" data-action-id="57" data-action-model="ir.actions.act_window" data-menu="114" href="#menu_id=114&amp;action=57">
-			            <span>Proveedores</span>
-			        </a>
-			    </li>    
-	       </ul>
-	    </li>
-    </ul>
-		
-		
-	  <div class="o_menu_brand hidden"></div>
-	    
-	  <ul class="o_menu_sections hidden"></ul>
-    
-    <ul class="o_menu_systray">
-	    <li class="o_planner_systray hidden-xs">
-	        <div class="progress" data-original-title="" title=""><div class="progress-bar"></div></div>
-	    </li>
-	    <li class="o_mail_navbar_item o_no_notification">
-	        <a href="#" title="Bandeja de entrada">
-	            <i class="fa fa-at"></i> <span class="o_notification_counter">0</span>
-	        </a>
-	    </li>
-	    <li class="o_mail_navbar_item o_no_notification">
-	      <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" title="Conversaciones">
-	      	<i class="fa fa-comments"></i> <span class="o_notification_counter">0</span>
-	      </a>
-	      <ul class="o_mail_navbar_dropdown dropdown-menu" role="menu">
-	        <li class="o_mail_navbar_dropdown_top">
-	          <div>
-	            <button class="btn btn-sm o_filter_button o_selected" type="button"> Todos </button>
-	            <button class="btn btn-sm o_filter_button" data-filter="chat" type="button"> Charla </button>
-	            <button class="btn btn-sm o_filter_button" data-filter="channels" type="button"> Canales </button>
-	          </div>
-	          <button class="btn btn-sm o_new_message" type="button"> Nuevo mensaje </button>
-	        </li>
-	        <li class="o_mail_navbar_dropdown_channels"></li>
-	      </ul>
-	    </li>
-	    <li>
-				<a aria-expanded="false" class="dropdown-toggle o_install_web_studio" data-toggle="dropdown" href="#" title="Customization">
-				  <img alt="" src="//edcorp1.odoo.com/web_studio/static/src/img/studio_icon_small.png" style="margin-bottom:4px">
-				</a>
-				<ul class="dropdown-menu" role="menu" style="width:250px">
-				  <li>
-				    <div style="color:#666; margin:5px;">
-				      <p>Odoo Studio is not installed yet.</p>
-				      <a class="btn btn-sm btn-primary btn-block open_install_web_studio" href="javascript:" style="margin: 5px 0">Install Odoo Studio</a>
-				      <p>Odoo Studio lets you customize screens and menus in a simple and graphical way.</p>
-				    </div>
-				  </li>
-				</ul>
-			</li>
-			<li class="o_user_menu">
-		    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">
-		        <img class="img-circle oe_topbar_avatar" src="https://edcorp1.odoo.com/web/image?model=res.users&amp;field=image_small&amp;id=1">
-		        <span class="oe_topbar_name">Eduardo Ramos</span> <span class="caret"></span>
-		    </a>
-		    <ul class="dropdown-menu" role="menu">
-		      <li><a data-menu="documentation" href="#">Documentacion</a></li>
-		      <li><a data-menu="support" href="#">Soporte</a></li>
-		      <li class="hidden-xs"><a data-menu="shortcuts" href="#">Shortcuts</a></li>
-					<li class="divider"></li>
-		      <li><a data-menu="settings" href="#">Preferencias</a></li>
-		      <li><a data-menu="account" href="#">Mi cuenta Odoo.com</a></li>
-		      <li><a data-menu="logout" href="#">Cerrar sesion</a></li>
-		      <li><a class="hidden" data-menu="switch_account" href="#"> Cambiar/Anadir Cuenta</a></li>
-		    </ul>
-			</li>
-		</ul>
-
-	</div>
-</nav>
-  -->    
-	      
-	      
-	      
 	    </div>
 	    <!-- END HEADER -->
 	  </div>
