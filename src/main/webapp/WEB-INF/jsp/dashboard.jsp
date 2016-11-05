@@ -105,7 +105,7 @@
 				</ul>
 			</li>
 			<li class="o_user_menu">
-	    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">
+	    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" style="text-decoration: none;">
 	        <img class="img-circle oe_topbar_avatar" src="https://edcorp1.odoo.com/web/image?model=res.users&amp;field=image_small&amp;id=1">
 	        <span class="oe_topbar_name">Eduardo Ramos</span> <span class="caret"></span>
 	    </a>

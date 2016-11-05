@@ -48,18 +48,29 @@
 }
 
 /*TOP MENU*/
+.navbar {
+	position: relative;
+	min-height: 45px;
+	margin-bottom: 0px;
+	border: 0px solid transparent;
+}
 .navbar-default {
 	background-color: #875A7B;
-	border: 1px solid #68465f;
+	border-bottom: 1px solid #68465f;
 	
+}
+.navbar-brand {
+	float: left;
+	padding: 15px 15px 10px 15px;
+	line-height: 20px;
+	height: 45px;
+	color: #fff !important;
+	font-weight: 600;
+	font-size: 16px;
 }
 /*LI*/
 .navbar-default .navbar-nav > li > a, .navbar-default .navbar-text {
 	color: #fff;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-	color: yellow;
-	background-color: #e7e7e7;
 }
 .navbar-default .navbar-nav > li:hover {
 	background-color: #68465f;
@@ -70,6 +81,14 @@
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
 	background-color: #68465f;
 	color: #fff;
+}
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+	color: #fff;
+	background-color: #68465f;
+}
+.navbar-nav > li > a {
+	padding-top: 13px;
+	padding-bottom: 13px;
 }
 </style>
 <link rel="shortcut icon" href="favicon.ico" />
@@ -87,7 +106,7 @@
     	
 			  <!-- DEFAULT NAVBAR TOP FIXED -->
 			  <nav class="navbar navbar-default navbar-fixed-top">
-		      <div class="container">
+		      
 		        <!-- LEFT -->
 		        <div class="navbar-header">
 		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -96,7 +115,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-		          <a class="navbar-brand" href="#" style="color: #fff;font-weight: 600;font-size: 22px;">Contabilidad</a>
+		          <a class="navbar-brand" href="#">Contabilidad</a>
 		        </div>
 		        
 		        <!-- BEGIN COLLAPSE -->
@@ -121,7 +140,7 @@
 		          </ul>
 		          
 		          
-		          <ul class="nav navbar-nav navbar-right">
+		          <ul class="nav navbar-nav navbar-right" style="padding-right: 10px;">
 		            <li class="o_mail_navbar_item o_no_notification"><a href="#" title="Bandeja de entrada"><i class="fa fa-at"></i> <span class="o_notification_counter">0</span></a></li>
 									<li class="o_user_menu">
 								    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -134,14 +153,14 @@
 								      <li class="hidden-xs"><a data-menu="shortcuts" href="#">Shortcuts</a></li>
 											<li class="divider"></li>
 								      <li><a data-menu="settings" href="#">Preferencias</a></li>
-								      <li><a data-menu="logout" href="#">Cerrar sesion</a></li>
+								      <li><a href="logout">Cerrar sesion</a></li>
 								    </ul>
 									</li>
 		          </ul>
 		        </div>
 		        <!-- END COLLAPSE -->
 		        
-		      </div>
+		      
 		    </nav>
 			    
 	    
